@@ -1,0 +1,82 @@
+.modal-container 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 60%;
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+    border: solid 1em white;
+    border-radius: 10px;
+    opacity: 0;
+    animation: transitionIn .5s ease;
+    animation-fill-mode: forwards;
+}
+
+.modal-body 
+{
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.modal-body > .modal-title 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1em;
+    background-color: rgba(0,0,0,0.65);
+    color: white;
+}
+
+.modal-body > .modal-title h1 
+{
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.modal-body > .modal-title button 
+{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    height: 5em;
+    width: 5em;
+    cursor: pointer;
+}
+
+.modal-body > .modal-title button::before,
+.modal-body > .modal-title button::after 
+{
+    content: "";
+    display: block;
+    height: .35em;
+    width: 40%;
+    background-color: white;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.modal-body > .modal-title button::before
+{
+    transform: rotate(45deg);
+}
+
+.modal-body > .modal-title button::after
+{
+    
+    transform: rotate(-45deg);
+}
+
+@keyframes transitionIn {
+    100% {
+        opacity: 1;
+    }
+}
